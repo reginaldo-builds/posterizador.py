@@ -10,14 +10,14 @@ if exist "venv\Scripts\activate.bat" (
     goto iniciar_programa
 )
 
-if exist "env_poster\Scripts\activate.bat" (
-    set "NOME_ENV=env_poster"
+if exist "venv\Scripts\activate.bat" (
+    set "NOME_ENV=venv"
     goto iniciar_programa
 )
 
 :: 3. CRIAÇÃO DA VENV (Caso não exista nenhuma)
-python -m venv env_poster
-set "NOME_ENV=env_poster"
+python -m venv venv
+set "NOME_ENV=venv"
 call %NOME_ENV%\Scripts\activate
 python -m pip install --upgrade pip >nul 2>&1
 pip install -r requirements.txt >nul 2>&1
